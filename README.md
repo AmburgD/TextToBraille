@@ -1,18 +1,18 @@
 # TextToBraille
-// TextToBraille.cpp  By: AmburgD Start date: 12/11/21
-//this is a converter that asks a user for an input string, then converts that string into a sentence in braille (specifically class 1 braille)
-// it will also accept file names so a user can read in a file and convert it to braille
-//class 2 braille will come after the project works
-//as by suggestion, this will eventually allow for output files that could potentially be 3d printable, but we are just going to stick to
-//getting the arrays to display for now
+ TextToBraille.cpp  By: AmburgD Start date: 12/11/21
+this is a converter that asks a user for an input string, then converts that string into a sentence in braille (specifically class 1 braille)
+it will also accept file names so a user can read in a file and convert it to braille
+class 2 braille will come after the project works
+as by suggestion, this will eventually allow for output files that could potentially be 3d printable, but we are just going to stick to
+getting the arrays to display for now
 
-//Beta 1.0 1/20/22
+Beta 1.0 1/20/22
 /*
 * So far the project works, however it prints the braille tranlsation vertically like japanese writing and not horizontally. Fix coming in the next update.
 */
 
 
-//first release Alpha 1.0 6/13/22
+first release Alpha 1.0 6/13/22
 /*
 * This took way too long to actually come to a release build, but...
 * we have finally reached a release version. The current version allows for a user to type in a sentence and output the translation to a .TXT file. 
@@ -25,7 +25,7 @@
 *   not case 2 braille
 */
 
-//Update 1.0.1 10/19/22
+Update 1.0.1 10/19/22
 /*
 * After a long hiatus with the start of college, I am now diving back into this project. This comes with good news
 * 
