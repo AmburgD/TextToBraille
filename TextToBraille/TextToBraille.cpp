@@ -21,7 +21,25 @@
 *	Cannot enter repeat capital letters in user entered text
 *	certain characters are missing. In hamlet test there are a lot of "This is not a character" errors
 *   exception handling
+*   not case 2 braille
 */
+
+//Update 1.0.1 10/19/22
+/*
+* After a long hiatus with the start of college, I am now diving back into this project. This comes with good news
+* 
+* ...This will be 3d printable!!!!!
+* 
+* after a couple of external conversions I have discovered a method of converting the output text file into an STL... of sorts.
+* Basically take the .TXT and convert it to at .JPG. Then take that .JPG and put it into Cura to make it into a lithophane.
+* 
+* This update converts all of the current braille letters from * to • as to make the .JPG easier to be interpereted by Cura
+* 
+* as for internal conversions (which would make this process more efficient) I have found a website that has a library with some of the 
+* nessesary functions I need. I will need to discuss how to make that happen and the logistics behind it with some coleagues. It would only convert
+* the .TXT to .JPG, so I still need to find a way to import it into Cura where it consistently makes a good file. 
+*/
+
 
 #include <iostream>
 #include <string>
@@ -40,7 +58,9 @@ displayChar: function for displaying the character. Uses a nested for loop for d
 void displayChar(char character[][2], int row, int col);
 /**
 textConvert: takes what the user gave as input and converts it to its braille counterpart
-
+@param currentLetter - the current letter being converted
+@param row - the number of rows
+@param col - the number of columns
 */
 void textConvert(char currentLetter, int row, int col);
 
@@ -57,161 +77,161 @@ string lineTwo = "";
 string lineThree = "";
 
 char a[3][2]{
-	{'*',' '},
+	{'•',' '},
 	{' ',' '},
 	{' ',' '}
 };
 char b[3][2]{
-	{'*',' '},
-	{'*',' '},
+	{'•',' '},
+	{'•',' '},
 	{' ',' '}
 };
 char c[3][2]{
-	{'*','*'},
+	{'•','•'},
 	{' ',' '},
 	{' ',' '}
 };
 char d[3][2]{
-	{'*','*'},
-	{' ','*'},
+	{'•','•'},
+	{' ','•'},
 	{' ',' '}
 };
 char e[3][2]{
-	{'*',' '},
-	{' ','*'},
+	{'•',' '},
+	{' ','•'},
 	{' ',' '}
 };
 char f[3][2]{
-	{'*','*'},
-	{'*',' '},
+	{'•','•'},
+	{'•',' '},
 	{' ',' '}
 };
 char g[3][2]{
-	{'*','*'},
-	{'*','*'},
+	{'•','•'},
+	{'•','•'},
 	{' ',' '}
 };
 char h[3][2]{
-	{'*',' '},
-	{'*','*'},
+	{'•',' '},
+	{'•','•'},
 	{' ',' '}
 };
 char i[3][2]{
-	{' ','*'},
-	{'*',' '},
+	{' ','•'},
+	{'•',' '},
 	{' ',' '}
 };
 char j[3][2]{
-	{' ','*'},
-	{'*','*'},
+	{' ','•'},
+	{'•','•'},
 	{' ',' '}
 };
 char k[3][2]{
-	{'*',' '},
+	{'•',' '},
 	{' ',' '},
-	{'*',' '}
+	{'•',' '}
 };
 char l[3][2]{
-	{'*',' '},
-	{'*',' '},
-	{'*',' '}
+	{'•',' '},
+	{'•',' '},
+	{'•',' '}
 };
 char m[3][2]{
-	{'*','*'},
+	{'•','•'},
 	{' ',' '},
-	{'*',' '}
+	{'•',' '}
 };
 char n[3][2]{
-	{'*','*'},
-	{' ','*'},
-	{'*',' '}
+	{'•','•'},
+	{' ','•'},
+	{'•',' '}
 };
 char o[3][2]{
-	{'*',' '},
-	{' ','*'},
-	{'*',' '}
+	{'•',' '},
+	{' ','•'},
+	{'•',' '}
 };
 char p[3][2]{
-	{'*','*'},
-	{'*',' '},
-	{'*',' '}
+	{'•','•'},
+	{'•',' '},
+	{'•',' '}
 };
 char q[3][2]{
-	{'*','*'},
-	{'*','*'},
-	{'*',' '}
+	{'•','•'},
+	{'•','•'},
+	{'•',' '}
 };
 char r[3][2]{
-	{'*',' '},
-	{'*','*'},
-	{'*',' '}
+	{'•',' '},
+	{'•','•'},
+	{'•',' '}
 };
 char s[3][2]{
-	{' ','*'},
-	{'*',' '},
-	{'*',' '}
+	{' ','•'},
+	{'•',' '},
+	{'•',' '}
 };
 char t[3][2]{
-	{' ','*'},
-	{'*','*'},
-	{'*',' '}
+	{' ','•'},
+	{'•','•'},
+	{'•',' '}
 };
 char u[3][2]{
-	{'*',' '},
+	{'•',' '},
 	{' ',' '},
-	{'*','*'}
+	{'•','•'}
 };
 char v[3][2]{
-	{'*',' '},
-	{'*',' '},
-	{'*','*'}
+	{'•',' '},
+	{'•',' '},
+	{'•','•'}
 };
 char w[3][2]{
-	{' ','*'},
-	{'*','*'},
-	{' ','*'}
+	{' ','•'},
+	{'•','•'},
+	{' ','•'}
 };
 char x[3][2]{
-	{'*','*'},
+	{'•','•'},
 	{' ',' '},
-	{'*','*'}
+	{'•','•'}
 };
 char y[3][2]{
-	{'*','*'},
-	{' ','*'},
-	{'*','*'}
+	{'•','•'},
+	{' ','•'},
+	{'•','•'}
 };
 char z[3][2]{
-	{'*',' '},
-	{' ','*'},
-	{'*','*'}
+	{'•',' '},
+	{' ','•'},
+	{'•','•'}
 };
 //put in front of a word to make the first letter capital, put two to make every letter capital
 char capitalLetter[3][2]{
 	{' ',' '},
 	{' ',' '},
-	{' ','*'}
+	{' ','•'}
 };
 
 //This next section is punctuation
 char period[3][2]{
 	{' ',' '},
-	{'*','*'},
-	{' ','*'}
+	{'•','•'},
+	{' ','•'}
 };
 char questionMark[3][2]{
 	{' ',' '},
-	{'*',' '},
-	{'*','*'}
+	{'•',' '},
+	{'•','•'}
 };
 char exclamationMark[3][2]{
 	{' ',' '},
-	{'*','*'},
-	{'*',' '}
+	{'•','•'},
+	{'•',' '}
 };
 char comma[3][2]{
 	{' ',' '},
-	{'*',' '},
+	{'•',' '},
 	{' ',' '}
 };
 
@@ -220,9 +240,9 @@ char comma[3][2]{
 // 15 would be ae because number sign a = 1 and then tag an e for the 5
 // this goes for every number up to infinity
 char numberSign[3][2]{
-	{' ','*'},
-	{' ','*'},
-	{'*','*'}
+	{' ','•'},
+	{' ','•'},
+	{'•','•'}
 };
 
 //make sure that spaces are accounted for
@@ -504,3 +524,4 @@ void pressEnterToContinue(void) {
 	return;
 }
 
+//end of line
