@@ -38,3 +38,7 @@ Update 1.0.1 10/19/22
  as for internal conversions (which would make this process more efficient) I have found a website that has a library with some of the 
  nessesary functions I need. I will need to discuss how to make that happen and the logistics behind it with some coleagues. It would only convert
  the .TXT to .JPG, so I still need to find a way to import it into Cura where it consistently makes a good file. 
+
+ Update 2.0 10/26/23
+
+ The code has been converted to python. The necessary libraries needded were in python so the entire code needed to be translated to be finished. Another seperate repository has been created for this reason. If someone wants to make modifications to this code to get it working in C++ that would be awesome. 
